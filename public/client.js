@@ -1,5 +1,3 @@
-// client.js
-
 const socket = io();
 
 const form = document.querySelector('form');
