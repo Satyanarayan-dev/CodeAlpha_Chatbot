@@ -8,17 +8,16 @@ const input = document.querySelector('#input');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (input.value) {
-        // Display user's message on the chat interface
-        displayUserMessage(input.value);
         
-        // Emit the user's message to the server
+        displayUserMessage(input.value);
+     
         socket.emit('chat message', input.value);
         input.value = '';
     }
 });
 
 socket.on('chat message', (msg) => {
-    // Display server's response on the chat interface
+
     displayChatbotResponse(msg);
 });
 
